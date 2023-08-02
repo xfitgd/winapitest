@@ -15,9 +15,11 @@ endif()
 
 #include_directories() 외부 헤더 포함 경로 추가
 
-# WIN32없으면 위 주석 subsystem 명시 필요
+
+# WIN32없으면 밑 주석 -Wl,--subsystem,windows 명시 필요
 add_executable(winapitest WIN32 main.c)
 
+#target_link_options(winapitest PUBLIC -Wl,--subsystem,windows)
 
 # 외부 라이브러리 링크 실행파일 만들때는 PUBLIC PRIVATE 생략가능
 #target_link_libraries(winapitest)
