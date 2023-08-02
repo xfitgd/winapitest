@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.a": "code-text-binary",
+        "*.ll": "llvm",
+        "*.c": "c",
+        "windows.h": "c"
+    }
+}
