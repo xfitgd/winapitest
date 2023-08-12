@@ -16,8 +16,8 @@ add_compile_definitions(NDEBUG _NDEBUG)
 add_compile_options(-O3 -std=c2x)# 최대 최적화
 endif()
 
-#include_directories() 외부 헤더 포함 경로 추가
-
+#include_directories() 외부 헤더 경로 추가
+#link_directories() 외부 라이브러리 경로 추가
 
 # WIN32없으면 밑 주석 -Wl,--subsystem,windows 명시 필요
 add_executable(winapitest WIN32 main.c)
@@ -25,4 +25,4 @@ add_executable(winapitest WIN32 main.c)
 #target_link_options(winapitest PUBLIC -Wl,--subsystem,windows)
 
 # 외부 라이브러리 링크 (실행파일 만들때는 PUBLIC PRIVATE 생략가능)
-#target_link_libraries(winapitest)
+#target_link_libraries(winapitest zlib example/lib/exlib.a) # zlib는 설정해둔 경로에 있는 libzlib.a 추가(컴파일러 설정에 따라 다름), exlib.a는 전체경로 예시
