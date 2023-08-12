@@ -21,5 +21,5 @@ add_executable(winapitest WIN32 main.c)
 
 #target_link_options(winapitest PUBLIC -Wl,--subsystem,windows)
 
-# 외부 라이브러리 링크 실행파일 만들때는 PUBLIC PRIVATE 생략가능
+# 외부 라이브러리 링크 (실행파일 만들때는 PUBLIC PRIVATE 생략가능)
 #target_link_libraries(winapitest)
