@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.26)
 
+# LLVM/Clang System 기준
+# set(CMAKE_C_COMPILER clang) # 스크립트 내에서 컴파일러 경로 설정
+# set(CMAKE_CXX_COMPILER clang++)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)#VSCODE로 설정 내보내기
 
@@ -24,13 +27,13 @@ else()
     add_compile_definitions(NDEBUG _NDEBUG)
 endif()
 
-#include_directories() 외부 헤더 포함 경로 추가
-
+#include_directories() 외부 헤더 경로 추가
+#link_directories() 외부 라이브러리 경로 추가
 
 # WIN32없으면 밑 주석 -Wl,--subsystem,windows 명시 필요
 add_executable(winapitest WIN32 main.c)
 
 #target_link_options(winapitest PUBLIC -Wl,--subsystem,windows)
 
-# 외부 라이브러리 링크 실행파일 만들때는 PUBLIC PRIVATE 생략가능
-#target_link_libraries(winapitest)
+# 외부 라이브러리 링크 (실행파일 만들때는 PUBLIC PRIVATE 생략가능)
+#target_link_libraries(winapitest zlib example/lib/exlib.a) # zlib는 설정해둔 경로에 있는 libzlib.a 추가(컴파일러 설정에 따라 다름), exlib.a는 전체경로 예시
