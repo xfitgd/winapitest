@@ -32,7 +32,7 @@ endif()
 # WIN32없으면 밑 주석 -Wl,--subsystem,windows 명시 필요
 add_executable(winapitest WIN32 main.c)
 
-#target_link_options(winapitest PUBLIC -Wl,--subsystem,windows)
+#target_link_options(winapitest PUBLIC -Wl,--subsystem,windows) # msvc는 /SUBSYSTEM:WINDOWS
 
 # 외부 라이브러리 링크 (실행파일 만들때는 PUBLIC PRIVATE 생략가능)
 #target_link_libraries(winapitest zlib example/lib/exlib.a) # zlib는 설정해둔 경로에 있는 libzlib.a 추가(컴파일러 설정에 따라 다름), exlib.a는 전체경로 예시
