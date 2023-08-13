@@ -3,13 +3,13 @@
 //reference https://github.com/microsoft/Windows-classic-samples/blob/main/Samples/Win7Samples/begin/LearnWin32/HelloWorld/cpp/main.cpp
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR pCmdLine, int nCmdShow)
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLine, int nCmdShow)
 {
 
     // Register the window class.
     const char CLASS_NAME[]  = "Sample Window Class";
     
-    WNDCLASS wc = { };
+    WNDCLASS wc = {0,};
 
     wc.lpfnWndProc   = WindowProc;
     wc.hInstance     = hInstance;
@@ -42,7 +42,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR pCmdLine, int nCmdShow)
     ShowWindow(hwnd, nCmdShow);
 
     // Run the message loop.
-    MSG msg = { };
+    MSG msg = {0,};
     while (GetMessage(&msg, NULL, 0, 0))
     {
         TranslateMessage(&msg);
