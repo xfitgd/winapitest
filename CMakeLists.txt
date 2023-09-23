@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.26)#3 이상 버전 권장
 
-# set(CMAKE_GENERATOR "Ninja") # 빌드 툴 설정
 # set(CMAKE_C_COMPILER clang) # 스크립트 내에서 컴파일러 경로 설정
 # set(CMAKE_CXX_COMPILER clang++)
 
