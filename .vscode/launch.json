@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(lldb) 시작",
+            "name": "Debug WinApiTest",
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/winapitest.exe",
