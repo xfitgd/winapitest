@@ -8,7 +8,6 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
         set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDebugDLL") # 실행시 별도의 CRT dll 필요, 정적 빌드 시 DLL 제거
     else() # gcc or clang
         add_compile_options(-fno-limit-debug-info -std=c2x)# 디버그 정보 보존, c23(버전 설정 예 필수 아님)
-        # -static 옵션은 libc++/libstdc++ 포함시 적용됨 -> libc++.dll(so)을 프로그램 실행시 요구하지 않음(정적 빌드)
     endif()
     add_compile_definitions(DEBUG _DEBUG)#매크로 추가
 else()
